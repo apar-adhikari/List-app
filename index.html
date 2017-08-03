@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+  <head>
+    <title>The Shopping List</title>
+    <link href="content/css/styles.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <!--<ng-include src="'header.html'"></ng-include> -->
+    <header ng-include="'header.html'"></header>
+    <main ng-view="">
+
+    </main>
+    <script src="app\lib\angular.min.js"></script>
+    <script src="app\lib\angular-route.min.js"></script>
+    <script src="app\app.js"></script>
+  </body>
+</html>

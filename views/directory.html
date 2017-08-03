@@ -1,0 +1,21 @@
+<div class="content">
+  <div ng-controller="ItemController">
+    <button ng-click="order = 'name'">Order by Name</button>
+    <button ng-click="order = 'quantity'">Order by Quantity</button>
+    <input type="text" ng-model="search" placeholder="Search for items here..."/>
+      <ul >
+          <!--<li ng-repeat="item in items">{{item}}</li> -->
+          <li ng-repeat="item in items | orderBy: order | filter: search" ng-show="item.available">
+            <h3>{{item.name}} - {{item.quantity}}</h3>
+            <div class="remove" ng-click="removeItem(item)">x</div>
+            <span class="label" style="background : {{item.label}}">{{item.label}} label</span>
+          </li>
+      </ul>
+    <form ng-submit="addItem()">
+      <input type="text" ng-model="newItem.name" placeholder="Item name"/>
+      <input type="text" ng-model="newItem.label" placeholder="Label"/>
+      <input type="text" ng-model="newItem.quantity" placeholder="Quantity"/>
+      <input type="submit" value="Add new item"/>
+    </form>
+  </div>
+</div>
